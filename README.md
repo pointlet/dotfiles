@@ -1,8 +1,8 @@
 pointlet's dotfiles
 
-repository tree mimcs local directory tree 
-this is to easily symlink configuration structure
-with gnu stow: https://www.gnu.org/software/stow/
+repository tree mimcs local directory tree \ 
+\ 
+symlink farm will set up the configuration structure for the user by using gnu stow: https://www.gnu.org/software/stow/
 
 # setup
 1. Install gnu stow
