@@ -16,10 +16,12 @@ pacman -S stow
 ```
 cd dotfiles
 ```
-3. 'stow .'
-    - 'stow --adpot .' if you want to override conflicting files 
+3. now you can stow you configuration creating symlinks to the dotfiles directory for you local user
+   
 ```
 stow .
+# or if you want to copy existing config file overriding the dotfiles version of it
+stow --adopt
 ```
 
 config for:
