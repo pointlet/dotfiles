@@ -1,2 +1,2 @@
 
-@theme "/usr/share/rofi/themes/Paper.rasi"
+@theme "~/.config/rofi/theme.generated.rasi"

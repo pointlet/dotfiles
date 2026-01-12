@@ -1,9 +1,12 @@
-"""Shared theme values for Qtile configuration."""
+"""Shared theme values for Qtile configuration.
+
+Generated via themegen/render.py. Edit palette.toml and this template, then rerun the renderer.
+"""
 
 # Fonts (smaller to reduce rendered surface size)
 BAR_FONT = "IBM Plex Mono SemiBold"
-BAR_FONT_SIZE = 13  # was 15
-BAR_PADDING = 4      # was 6
+BAR_FONT_SIZE = 13
+BAR_PADDING = 4
 
 # Dimensions / spacing
 BAR_HEIGHT = 24
@@ -12,21 +15,21 @@ OUTER_GAP = 8
 INNER_GAP = 8
 
 # Colors
-COLOR_FOREGROUND = "#000000"
-COLOR_INACTIVE = "#a0a0a0"
-COLOR_ACTIVE_BORDER = "#f0f0f0"
-COLOR_URGENT = "#ff0000"
-COLOR_BORDER_FOCUS = "#f5f5f5"   # Off-white
-COLOR_BORDER_NORMAL = "#545454"   # Subtle gray
+COLOR_FOREGROUND = "#5a5751"
+COLOR_INACTIVE = "#a2a39d"
+COLOR_ACTIVE_BORDER = "#e6e2e1"
+COLOR_URGENT = "#d13b3b"
+COLOR_BORDER_FOCUS = "#adb5c2"
+COLOR_BORDER_NORMAL = "#a2a39d"
 
 # Volume bar colors
-COLOR_VOLUME_BAR_ACTIVE = "#000000"        # Filled bars when unmuted
-COLOR_VOLUME_BAR_INACTIVE = COLOR_INACTIVE  # Empty bars when unmuted
-COLOR_VOLUME_BAR_MUTED_ACTIVE = "#ff0000"  # Filled bars when muted
-COLOR_VOLUME_BAR_MUTED_INACTIVE = "#ff8080"  # Empty bars when muted (faded red)
+COLOR_VOLUME_BAR_ACTIVE = "#5a5751"
+COLOR_VOLUME_BAR_INACTIVE = "#a2a39d"
+COLOR_VOLUME_BAR_MUTED_ACTIVE = "#d13b3b"
+COLOR_VOLUME_BAR_MUTED_INACTIVE = "#f2b8b8"
 
-# Bar (opaque to avoid compositor translucency overhead)
-BAR_BACKGROUND = "#00000000" 
+# Bar 
+BAR_BACKGROUND = "#00000000"
 CLOCK_FORMAT = "%H:%M %a %d/%m"
 
 # Wallpaper (None avoids decoding/keeping a large image in memory)

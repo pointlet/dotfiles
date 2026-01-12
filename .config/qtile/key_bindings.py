@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import subprocess
+from pathlib import Path
 from typing import Any, Callable, List, Sequence
 
 from screen_layout import ScreenConfig
@@ -18,6 +19,7 @@ NORMAL_WINDOW_SIZE = (1200, 800)
 APP_LAUNCHER = "rofi -show drun"
 MENU_LAUNCHER = "dmenu_run"
 ALTERNATIVE_MOD = "mod4"
+THEMEGEN = Path.home() / "dotfiles/themegen/render.py"
 
 
 def run_and_refresh_widget(cmd: Sequence[str], widget_name: str) -> Callable[[Any], None]:
@@ -196,8 +198,12 @@ class KeyBindings:
         ]
 
     def _qtile_controls(self) -> List:
+        def regenerate_and_reload(qtile):
+            subprocess.run(["python3", str(THEMEGEN)], check=False)
+            qtile.reload_config()
+
         return [
-            self.Key([self.mod, "control"], "r", self.lazy.reload_config(), desc="Reload config"),
+            self.Key([self.mod, "control"], "r", self.lazy.function(regenerate_and_reload), desc="Regenerate theme and reload"),
             self.Key([self.mod, "control"], "q", self.lazy.shutdown(), desc="Shutdown qtile"),
         ]
 

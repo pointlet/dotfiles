@@ -1,0 +1,26 @@
+/* Generated via themegen/render.py from palette.toml */
+* {
+    background: $$$BACKGROUND$$$;
+    foreground: $$$FOREGROUND$$$;
+    accent: $$$ACCENT$$$;
+    muted: $$$MUTED$$$;
+}
+
+window {
+    background-color: @background;
+    border: 2px solid $$$BORDER$$$;
+}
+
+listview, element {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+element selected {
+    background-color: $$$ACCENT_SOFT$$$;
+    text-color: $$$BACKGROUND$$$;
+}
+
+scrollbar {
+    handle-color: $$$ACCENT$$$;
+}

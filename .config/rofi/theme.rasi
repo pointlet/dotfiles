@@ -1,0 +1,26 @@
+/* Generated via themegen/render.py from palette.toml */
+* {
+    background: #e6e2e1;
+    foreground: #5a5751;
+    accent: #adb5c2;
+    muted: #a2a39d;
+}
+
+window {
+    background-color: @background;
+    border: 2px solid #a2a39d;
+}
+
+listview, element {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+element selected {
+    background-color: #ced2db;
+    text-color: #e6e2e1;
+}
+
+scrollbar {
+    handle-color: #adb5c2;
+}
