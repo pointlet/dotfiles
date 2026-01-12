@@ -1,0 +1,17 @@
+[Unit]
+Description=Wayland idle locker using swaylock
+StartLimitIntervalSec=0
+StartLimitBurst=0
+OnFailure=lock-and-logout.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/swayidle -w \
+  lock '/usr/bin/swaylock --config /home/pointlet/.config/swaylock/config -f' \
+  before-sleep '/usr/bin/swaylock --config /home/pointlet/.config/swaylock/config -f' \
+  timeout 300 '/usr/bin/swaylock --config /home/pointlet/.config/swaylock/config -f'
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=graphical-session.target

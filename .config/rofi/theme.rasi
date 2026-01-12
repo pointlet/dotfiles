@@ -1,26 +1,120 @@
 /* Generated via themegen/render.py from palette.toml */
 * {
     background: #e6e2e1;
-    foreground: #5a5751;
-    accent: #adb5c2;
-    muted: #a2a39d;
+    foreground: #3b3936;
+    accent: #596369;
+    muted: #6f6f6c;
+    /* Common rofi variables used by themes */
+    normal-background: #e6e2e1;
+    normal-foreground: #3b3936;
+    selected-normal-background: #CCD0D9;
+    selected-normal-foreground: #3b3936;
+    selected-active-background: #CCD0D9;
+    selected-active-foreground: #3b3936;
 }
 
 window {
-    background-color: @background;
-    border: 2px solid #a2a39d;
+    background-color: #e6e2e1;
+    border: 2px solid;
+    border-color: #4b4f4d;
 }
 
-listview, element {
-    background-color: @background;
-    text-color: @foreground;
+/* Main container and list defaults: ensure no extra padding/border artifacts */
+mainbox {
+    /* outer padding around the window */
+    padding: 0.6000em;
+    border: 0;
+    background-color: #e6e2e1;
 }
 
+listview {
+    /* small inner padding between window edge and rows */
+    padding: 0.2000em;
+    border: 0;
+    spacing: 4px;
+    background-color: #e6e2e1;
+    text-color: #3b3936;
+}
+
+element {
+    background-color: #e6e2e1;
+    text-color: #3b3936;
+}
+
+/* Selected row: use accent color for highlight, foreground becomes background color for contrast */
 element selected {
-    background-color: #ced2db;
-    text-color: #e6e2e1;
+    background-color: #CCD0D9;
+    text-color: #f3efe6;
+}
+
+/* Make the mode button (e.g. 'drun') use the window background */
+mode-switcher button, mode-switcher button selected {
+    background-color: #e6e2e1;
+    text-color: #3b3936;
+}
+
+/* Ensure element-text boxes don't override row backgrounds */
+element-text {
+    background-color: transparent;
+}
+
+/* Make the input row (where you type the query) match the other rows */
+inputbar {
+    background-color: #e6e2e1;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+entry {
+    background-color: #e6e2e1;
+    text-color: #3b3936;
+}
+
+prompt {
+    background-color: #e6e2e1;
+    text-color: #3b3936;
+}
+
+/* Widgets to the right of the entry should match the input background */
+overlay {
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0px 0.2000em;
+    text-color: #3b3936;
+}
+
+num-filtered-rows {
+    background-color: transparent;
+    text-color: #3b3936;
+    expand: false;
+}
+
+num-rows {
+    background-color: transparent;
+    text-color: #3b3936;
+    expand: false;
+}
+
+textbox-num-sep {
+    background-color: transparent;
+    text-color: #3b3936;
+}
+
+case-indicator {
+    background-color: transparent;
+    text-color: #3b3936;
 }
 
 scrollbar {
-    handle-color: #adb5c2;
+    handle-color: #596369;
+}
+
+overlay {
+    padding: 0px 0.2000em;
+    background-color: #e6e2e1;
+    foreground-color: #3b3936;
+    margin: 0px;
+    text-color: #3b3936;
 }

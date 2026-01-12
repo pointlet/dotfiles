@@ -1,0 +1,39 @@
+[values]
+# Typography & spacing
+FONT = "IBM Plex Mono SemiBold"
+FONT_SIZE = 13
+PADDING = 4
+
+# Layout basics
+BAR_HEIGHT = 24
+BORDER_WIDTH = 4
+OUTER_GAP = 8
+INNER_GAP = 8
+
+# Core palette (shared by all apps)
+DARK = "#cfcfcf"
+BACKGROUND = "#e6e2e1"
+SURFACE = "#ced2db"
+FOREGROUND = "#3b3936"
+MUTED = "#6f6f6c"
+ACCENT = "#596369"
+ACCENT_SOFT = "#83909a"
+SECONDARY = "#7f878b"
+BORDER = "#4b4f4d"
+HIGHLIGHT = "#CCD0D9"      # user-requested brighter highlight, no alpha
+BRIGHT = "#ffffff"         # Bright white for indicators
+SECONDARY_SOFT = "#879197"
+BORDER_FOCUS = "#9aa4ad"
+DANGER = "#d13b3b"
+DANGER_SOFT = "#f2b8b8"
+TRANSPARENT = "#00000000"
+
+# Application-neutral extras
+CURSOR = "#1e1c1a"
+CURSOR_TEXT = "#f3efe6"
+SELECTION = "#8b765c"
+
+# Clock & wallpaper
+CLOCK_FORMAT = "%H:%M %a %d/%m"
+WALLPAPER_PATH = "/home/pointlet/images/wallpaper.jpg"
+WALLPAPER_MODE = "fill"

@@ -9,6 +9,7 @@ should be edited in the respective module files.
 from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
+from pathlib import Path
 
 # Configuration modules
 from screen_layout import ScreenConfig, BarPosition
@@ -26,6 +27,7 @@ from theme import (
     OUTER_GAP,
     INNER_GAP,
 )
+import subprocess
 
 # ============================================================================
 # SHARED CONFIGURATION - Variables used across multiple modules
@@ -112,6 +114,10 @@ layouts, floating_layout = create_layouts(
 # ============================================================================
 # Hooks
 # ============================================================================
+@hook.subscribe.startup_once
+def _autostart():
+    subprocess.Popen(["/home/pointlet/dotfiles/.config/qtile/autostart.sh"])
+
 @hook.subscribe.client_focus
 def raise_focused_window(window):
     """Raises the newly focused window."""

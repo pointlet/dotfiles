@@ -4,23 +4,117 @@
     foreground: $$$FOREGROUND$$$;
     accent: $$$ACCENT$$$;
     muted: $$$MUTED$$$;
+    /* Common rofi variables used by themes */
+    normal-background: $$$BACKGROUND$$$;
+    normal-foreground: $$$FOREGROUND$$$;
+    selected-normal-background: $$$HIGHLIGHT$$$;
+    selected-normal-foreground: $$$FOREGROUND$$$;
+    selected-active-background: $$$HIGHLIGHT$$$;
+    selected-active-foreground: $$$FOREGROUND$$$;
 }
 
 window {
-    background-color: @background;
-    border: 2px solid $$$BORDER$$$;
+    background-color: $$$BACKGROUND$$$;
+    border: 2px solid;
+    border-color: $$$BORDER$$$;
 }
 
-listview, element {
-    background-color: @background;
-    text-color: @foreground;
+/* Main container and list defaults: ensure no extra padding/border artifacts */
+mainbox {
+    /* outer padding around the window */
+    padding: 0.6000em;
+    border: 0;
+    background-color: $$$BACKGROUND$$$;
 }
 
+listview {
+    /* small inner padding between window edge and rows */
+    padding: 0.2000em;
+    border: 0;
+    spacing: 4px;
+    background-color: $$$BACKGROUND$$$;
+    text-color: $$$FOREGROUND$$$;
+}
+
+element {
+    background-color: $$$BACKGROUND$$$;
+    text-color: $$$FOREGROUND$$$;
+}
+
+/* Selected row: use accent color for highlight, foreground becomes background color for contrast */
 element selected {
-    background-color: $$$ACCENT_SOFT$$$;
-    text-color: $$$BACKGROUND$$$;
+    background-color: $$$HIGHLIGHT$$$;
+    text-color: $$$CURSOR_TEXT$$$;
+}
+
+/* Make the mode button (e.g. 'drun') use the window background */
+mode-switcher button, mode-switcher button selected {
+    background-color: $$$BACKGROUND$$$;
+    text-color: $$$FOREGROUND$$$;
+}
+
+/* Ensure element-text boxes don't override row backgrounds */
+element-text {
+    background-color: transparent;
+}
+
+/* Make the input row (where you type the query) match the other rows */
+inputbar {
+    background-color: $$$BACKGROUND$$$;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+entry {
+    background-color: $$$BACKGROUND$$$;
+    text-color: $$$FOREGROUND$$$;
+}
+
+prompt {
+    background-color: $$$BACKGROUND$$$;
+    text-color: $$$FOREGROUND$$$;
+}
+
+/* Widgets to the right of the entry should match the input background */
+overlay {
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0px 0.2000em;
+    text-color: $$$FOREGROUND$$$;
+}
+
+num-filtered-rows {
+    background-color: transparent;
+    text-color: $$$FOREGROUND$$$;
+    expand: false;
+}
+
+num-rows {
+    background-color: transparent;
+    text-color: $$$FOREGROUND$$$;
+    expand: false;
+}
+
+textbox-num-sep {
+    background-color: transparent;
+    text-color: $$$FOREGROUND$$$;
+}
+
+case-indicator {
+    background-color: transparent;
+    text-color: $$$FOREGROUND$$$;
 }
 
 scrollbar {
     handle-color: $$$ACCENT$$$;
+}
+
+overlay {
+    padding: 0px 0.2000em;
+    background-color: $$$BACKGROUND$$$;
+    foreground-color: $$$FOREGROUND$$$;
+    margin: 0px;
+    text-color: $$$FOREGROUND$$$;
 }

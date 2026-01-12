@@ -1,0 +1,52 @@
+# Generated via themegen/render.py from palette.toml
+# Swaylock configuration with all colors set to BACKGROUND
+
+font=IBM Plex Mono SemiBold
+indicator-radius=110
+indicator-thickness=8
+
+# Background
+color=#e6e2e1
+
+# Inside colors
+inside-color=#e6e2e1
+inside-clear-color=#e6e2e1
+inside-ver-color=#e6e2e1
+inside-wrong-color=#e6e2e1
+inside-caps-lock-color=#e6e2e1
+
+# Ring colors
+ring-color=#e6e2e1
+ring-clear-color=#e6e2e1
+ring-ver-color=#e6e2e1
+ring-wrong-color=#e6e2e1
+ring-caps-lock-color=#e6e2e1
+
+# Text colors
+text-color=#e6e2e1
+text-clear-color=#e6e2e1
+text-ver-color=#e6e2e1
+text-wrong-color=#e6e2e1
+text-caps-lock-color=#e6e2e1
+
+# Highlight colors
+key-hl-color=#3b3936
+bs-hl-color=#e6e2e1
+caps-lock-key-hl-color=#e6e2e1
+caps-lock-bs-hl-color=#e6e2e1
+
+# Layout colors
+layout-bg-color=#e6e2e1
+layout-border-color=#e6e2e1
+layout-text-color=#e6e2e1
+
+# Separator and line colors
+separator-color=#e6e2e1
+line-color=#e6e2e1
+line-clear-color=#e6e2e1
+line-ver-color=#e6e2e1
+line-wrong-color=#e6e2e1
+line-caps-lock-color=#e6e2e1
+
+# Other options
+disable-caps-lock-text

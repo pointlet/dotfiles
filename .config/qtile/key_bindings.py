@@ -16,10 +16,10 @@ from screen_layout import ScreenConfig
 MOVEMENT_INCREMENT = 320  # Pixels to move/resize per keypress
 SMALL_WINDOW_SIZE = (800, 600)
 NORMAL_WINDOW_SIZE = (1200, 800)
-APP_LAUNCHER = "rofi -show drun"
+APP_LAUNCHER = f"rofi -config {Path.home()/ 'dotfiles' / '.config' / 'rofi' / 'config.rasi'} -show drun"
 MENU_LAUNCHER = "dmenu_run"
 ALTERNATIVE_MOD = "mod4"
-THEMEGEN = Path.home() / "dotfiles/themegen/render.py"
+THEMEGEN = Path.home() / ".config/themegen/render.py"
 
 
 def run_and_refresh_widget(cmd: Sequence[str], widget_name: str) -> Callable[[Any], None]:
@@ -203,6 +203,7 @@ class KeyBindings:
             qtile.reload_config()
 
         return [
+            self.Key([self.mod, ALTERNATIVE_MOD, "control"], "l", self.lazy.spawn(f"swaylock -f -C {Path.home() / '.config' / 'swaylock' / 'config'}"), desc="Lock screen"),
             self.Key([self.mod, "control"], "r", self.lazy.function(regenerate_and_reload), desc="Regenerate theme and reload"),
             self.Key([self.mod, "control"], "q", self.lazy.shutdown(), desc="Shutdown qtile"),
         ]

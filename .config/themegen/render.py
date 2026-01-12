@@ -89,7 +89,7 @@ def parse_args() -> argparse.Namespace:
         epilog="Exit codes: 0=success, 1=palette missing/error, 2=missing tokens",
     )
     parser.add_argument("--root", type=Path, default=root_default, help="Root directory to scan (default: git root or repo parent)")
-    parser.add_argument("--palette", type=Path, default=root_default / "themegen" / "palette.toml", help="Palette TOML file")
+    parser.add_argument("--palette", type=Path, default=root_default / ".config" / "themegen" / "palette.toml", help="Palette TOML file")
     parser.add_argument("--only", nargs="*", help="Optional list of template path globs to render (relative to root)")
     parser.add_argument("--ignore", nargs="*", default=[], help="Additional ignore globs (relative to root)")
     parser.add_argument("--allow-missing", action="store_true", help="Leave unknown tokens untouched instead of failing")

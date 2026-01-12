@@ -1,0 +1,9 @@
+[Unit]
+Description=Lock and terminate session when locker fails
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -lc 'loginctl lock-session "$XDG_SESSION_ID"; loginctl terminate-session "$XDG_SESSION_ID"'
+
+[Install]
+WantedBy=default.target
