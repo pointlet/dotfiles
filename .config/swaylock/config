@@ -30,7 +30,7 @@ text-wrong-color=#00000000
 text-caps-lock-color=#00000000
 
 # Highlight colors
-key-hl-color=#ff9900
+key-hl-color=#3b3936
 bs-hl-color=#00000000
 caps-lock-key-hl-color=#00000000
 caps-lock-bs-hl-color=#00000000

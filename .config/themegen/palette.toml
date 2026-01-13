@@ -1,7 +1,7 @@
 [values]
 # Typography & spacing
 FONT = "IBM Plex Mono SemiBold"
-FONT_SIZE = 13
+FONT_SIZE = 14
 PADDING = 4
 
 # Layout basics
@@ -24,5 +24,6 @@ TRANSPARENT = "#00000000"
 
 # Clock & wallpaper
 CLOCK_FORMAT = "%H:%M %a %d/%m"
+BLURRED_WALLPAPER_PATH = "/home/pointlet/images/wallpaper_blurred.jpg"
 WALLPAPER_PATH = "/home/pointlet/images/wallpaper.jpg"
 WALLPAPER_MODE = "fill"

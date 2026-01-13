@@ -79,3 +79,4 @@ config for:
 - rofi
 - swaylock
 - qtile
+- vscode

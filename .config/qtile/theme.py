@@ -5,7 +5,7 @@ Generated via themegen/render.py. Edit palette.toml and this template, then reru
 
 # Fonts (smaller to reduce rendered surface size)
 BAR_FONT = "IBM Plex Mono SemiBold"
-BAR_FONT_SIZE = 13
+BAR_FONT_SIZE = 14
 BAR_PADDING = 4
 
 # Dimensions / spacing
