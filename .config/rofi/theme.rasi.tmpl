@@ -7,9 +7,9 @@
     /* Common rofi variables used by themes */
     normal-background: $$$BACKGROUND$$$;
     normal-foreground: $$$FOREGROUND$$$;
-    selected-normal-background: $$$HIGHLIGHT$$$;
+    selected-normal-background: $$$SURFACE$$$;
     selected-normal-foreground: $$$FOREGROUND$$$;
-    selected-active-background: $$$HIGHLIGHT$$$;
+    selected-active-background: $$$SURFACE$$$;
     selected-active-foreground: $$$FOREGROUND$$$;
 }
 
@@ -43,8 +43,8 @@ element {
 
 /* Selected row: use accent color for highlight, foreground becomes background color for contrast */
 element selected {
-    background-color: $$$HIGHLIGHT$$$;
-    text-color: $$$CURSOR_TEXT$$$;
+    background-color: $$$SURFACE$$$;
+    text-color: $$$FOREGROUND$$$;
 }
 
 /* Make the mode button (e.g. 'drun') use the window background */

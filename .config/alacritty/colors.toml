@@ -5,29 +5,29 @@ background = "#e6e2e1"
 foreground = "#3b3936"
 
 [colors.cursor]
-text = "#f3efe6"
-cursor = "#1e1c1a"
+text = "#3b3936"
+cursor = "#596369"
 
 [colors.selection]
 text = "#3b3936"
-background = "#8b765c"
+background = "#8d8c84"
 
 [colors.normal]
 black   = "#e6e2e1"
 red     = "#596369"
-green   = "#6f6f6c"
+green   = "#8d8c84"
 yellow  = "#83909a"
-blue    = "#7f878b"
+blue    = "#8d8c84"
 magenta = "#596369"
-cyan    = "#879197"
+cyan    = "#83909a"
 white   = "#3b3936"
 
 [colors.bright]
 black   = "#4b4f4d"
 red     = "#596369"
-green   = "#6f6f6c"
+green   = "#8d8c84"
 yellow  = "#83909a"
-blue    = "#7f878b"
+blue    = "#8d8c84"
 magenta = "#596369"
-cyan    = "#879197"
+cyan    = "#83909a"
 white   = "#3b3936"

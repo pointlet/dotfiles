@@ -3,13 +3,13 @@
     background: #e6e2e1;
     foreground: #3b3936;
     accent: #596369;
-    muted: #6f6f6c;
+    muted: #8d8c84;
     /* Common rofi variables used by themes */
     normal-background: #e6e2e1;
     normal-foreground: #3b3936;
-    selected-normal-background: #CCD0D9;
+    selected-normal-background: #ced2db;
     selected-normal-foreground: #3b3936;
-    selected-active-background: #CCD0D9;
+    selected-active-background: #ced2db;
     selected-active-foreground: #3b3936;
 }
 
@@ -43,8 +43,8 @@ element {
 
 /* Selected row: use accent color for highlight, foreground becomes background color for contrast */
 element selected {
-    background-color: #CCD0D9;
-    text-color: #f3efe6;
+    background-color: #ced2db;
+    text-color: #3b3936;
 }
 
 /* Make the mode button (e.g. 'drun') use the window background */
