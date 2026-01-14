@@ -588,7 +588,5 @@
   "terminal.integrated.fontFamily": "IBM Plex Mono SemiBold",
   "terminal.integrated.fontSize": 14,
   "editor.semanticHighlighting.enabled": false,
-  "editor.language.colorizedBracketPairs": false,
-  "workbench.colorTheme": "Default High Contrast Light",
-  "editor.minimap.enabled": false
+  "editor.language.colorizedBracketPairs": false
 }
