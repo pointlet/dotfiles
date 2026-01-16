@@ -114,7 +114,7 @@ layouts, floating_layout = create_layouts(
 # ============================================================================
 # Hooks
 # ============================================================================
-@hook.subscribe.startup_once
+@hook.subscribe.startup
 def _autostart():
     subprocess.Popen(["/home/pointlet/dotfiles/.config/qtile/autostart.sh"])
 
