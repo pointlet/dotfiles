@@ -26,7 +26,7 @@ require("lazy").setup({
                 typescript = { "prettier" },
                 javascriptreact = { "prettier" },
                 typescriptreact = { "prettier" },
-                go = { "gofmt" },  -- or lsp
+                go = { "goimports", "gofumpt" },
                 sh = { "shfmt" },
             },
         } },
@@ -40,11 +40,15 @@ require("lazy").setup({
                 sh = { 'shellcheck' },
             }
         end },
-        { 'ibhagwan/fzf-lua', dependencies = { 'nvim-tree/nvim-web-devicons' }, opts = {
+        { 'ibhagwan/fzf-lua', opts = {
+            file_icon_padding = '',
             preview = true,
             fzf_opts = {
                 ['--color'] = 'bg:#e6e2e1,fg:#3b3936,hl:#596369,fg+:#3b3936,bg+:#e6e2e1,hl+:#3b3936,info:#83909a,prompt:#83909a,pointer:#83909a,marker:#83909a,spinner:#83909a,header:#83909a'
             },
+            files = { file_icons = false, git_icons = false },
+            grep = { file_icons = false, git_icons = false },
+            buffers = { file_icons = false, git_icons = false },
             lsp = {
                 symbols = 'disabled'
             }

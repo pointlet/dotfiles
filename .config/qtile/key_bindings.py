@@ -81,6 +81,7 @@ class KeyBindings:
             + self._qtile_controls()
             + self._vt_switching()
             + self._volume_control()
+            + self._network_management()
         )
 
     def _window_focus_cycle(self) -> List:
@@ -226,6 +227,11 @@ class KeyBindings:
             self.Key([], "F1", self.lazy.widget["pulsevol"].mute(), desc="Toggle mute"),
             self.Key([], "F2", self.lazy.widget["pulsevol"].decrease_vol(), desc="Volume down"),
             self.Key([], "F3", self.lazy.widget["pulsevol"].increase_vol(), desc="Volume up"),
+        ]
+
+    def _network_management(self) -> List: 
+        return [
+            self.Key([self.mod], "n", self.lazy.spawncmd("alacritty -e python3 /home/pointlet/scripts/wifi-connect.py"), desc="Connect to wifi...")
         ]
 
     def get_group_bindings(self, groups) -> List:

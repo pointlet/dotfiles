@@ -2,11 +2,11 @@ return {
     {
         "nvim-lualine/lualine.nvim",
         event = "VeryLazy",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             local c = require("theme.colors")
             require("lualine").setup({
                 options = {
+                    icons_enabled = false,
                     theme = {
                         normal = {
                             a = { fg = c.bg, bg = c.accent },
@@ -28,9 +28,13 @@ return {
                 },
                 sections = {
                     lualine_a = { "mode" },
-                    lualine_b = { "branch", "diff", "diagnostics" },
+                    lualine_b = {
+                        { "branch", icon = "" },
+                        { "diff", symbols = { added = "+", modified = "~", removed = "-" } },
+                        { "diagnostics", symbols = { error = "E", warn = "W", info = "I", hint = "H" } },
+                    },
                     lualine_c = { "filename" },
-                    lualine_x = { "encoding", "fileformat", "filetype" },
+                    lualine_x = { "encoding", "fileformat", { "filetype", icons_enabled = false } },
                     lualine_y = { "progress" },
                     lualine_z = { "location" },
                 },
@@ -42,12 +46,26 @@ return {
         keys = {
             { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle file tree" },
         },
-        dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {
             view = { width = 30, side = "left" },
             renderer = {
                 icons = {
-                    show = { file = true, folder = true, folder_arrow = true, git = true },
+                    show = { file = false, folder = false, folder_arrow = true, git = true },
+                    glyphs = {
+                        folder = {
+                            arrow_closed = ">",
+                            arrow_open = "v",
+                        },
+                        git = {
+                            unstaged = "M",
+                            staged = "S",
+                            unmerged = "U",
+                            renamed = "R",
+                            untracked = "?",
+                            deleted = "D",
+                            ignored = "I",
+                        },
+                    },
                 },
             },
             git = { enable = true, ignore = false },
@@ -56,6 +74,13 @@ return {
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
-        opts = {},
+        opts = {
+            icons = {
+                mappings = false,
+                breadcrumb = ">>",
+                separator = "->",
+                group = "+",
+            },
+        },
     },
 }

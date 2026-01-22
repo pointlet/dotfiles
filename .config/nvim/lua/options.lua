@@ -43,13 +43,8 @@ opt.completeopt = "menuone,noselect"
 opt.updatetime = 250
 opt.timeoutlen = 300
 
--- Paste handling (fix for bracketed paste issues)
-vim.cmd([[
-  let &t_BE = "\e[?2004h"
-  let &t_BD = "\e[?2004l"
-  let &t_PS = "\e[200~"
-  let &t_PE = "\e[201~"
-]])
+-- Paste mode toggle (F2) - use if paste formatting is ever off
+vim.keymap.set("n", "<F2>", ":set paste!<CR>", { desc = "Toggle paste mode" })
 
 -- Auto-reload buffers when files change externally
 opt.autoread = true

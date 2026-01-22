@@ -1,7 +1,43 @@
 local servers = {
     pyright = {},
     ts_ls = {},
-    gopls = {},
+    gopls = {
+        settings = {
+            gopls = {
+                gofumpt = true,
+                codelenses = {
+                    gc_details = false,
+                    generate = true,
+                    regenerate_cgo = true,
+                    run_govulncheck = true,
+                    test = true,
+                    tidy = true,
+                    upgrade_dependency = true,
+                    vendor = true,
+                },
+                hints = {
+                    assignVariableTypes = true,
+                    compositeLiteralFields = true,
+                    compositeLiteralTypes = true,
+                    constantValues = true,
+                    functionTypeParameters = true,
+                    parameterNames = true,
+                    rangeVariableTypes = true,
+                },
+                analyses = {
+                    nilness = true,
+                    unusedparams = true,
+                    unusedwrite = true,
+                    useany = true,
+                },
+                usePlaceholders = true,
+                completeUnimported = true,
+                staticcheck = true,
+                directoryFilters = { "-.git", "-.vscode", "-.idea", "-.venv", "-node_modules" },
+                semanticTokens = true,
+            },
+        },
+    },
     bashls = {},
     lua_ls = {
         settings = {
@@ -17,6 +53,20 @@ local servers = {
         },
     },
 }
+
+-- Diagnostic configuration (virtual lines below code)
+vim.diagnostic.config({
+    virtual_text = false, -- Disable default virtual text
+    virtual_lines = { only_current_line = true }, -- Show on current line only to reduce noise
+    signs = true,
+    underline = true,
+    update_in_insert = false,
+    severity_sort = true,
+    float = {
+        border = "rounded",
+        source = true,
+    },
+})
 
 -- Use fzf-lua for LSP pickers
 vim.lsp.handlers["textDocument/definition"] = function(...)
@@ -40,20 +90,38 @@ vim.api.nvim_create_autocmd("LspAttach", {
             vim.keymap.set(mode, lhs, rhs, { buffer = event.buf, desc = desc })
         end
 
-        map("n", "<leader>d", vim.lsp.buf.definition, "Go to definition")
-        map("n", "<leader>D", vim.lsp.buf.declaration, "Go to declaration")
+        -- Navigation (g prefix for "go to")
+        map("n", "<leader>l", vim.lsp.buf.definition, "Go to definition")
+        map("n", "<leader>gD", vim.lsp.buf.declaration, "Go to declaration")
         map("n", "<leader>gi", vim.lsp.buf.implementation, "Go to implementation")
         map("n", "<leader>gt", vim.lsp.buf.type_definition, "Go to type definition")
         map("n", "<leader>gr", vim.lsp.buf.references, "Show references")
+
+        -- Info
         map("n", "<leader>t", vim.lsp.buf.hover, "Hover info")
         map("n", "<leader>s", vim.lsp.buf.signature_help, "Signature help")
+
+        -- Actions
         map("n", "<leader>rn", vim.lsp.buf.rename, "Rename symbol")
         map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code action")
         map("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end, "Format")
+
+        -- Inlay hints toggle (useful for Go type hints)
+        if vim.lsp.inlay_hint then
+            map("n", "<leader>th", function()
+                vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+            end, "Toggle inlay hints")
+        end
     end,
 })
 
 return {
+    {
+        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+        config = function()
+            require("lsp_lines").setup()
+        end,
+    },
     {
         "mason-org/mason.nvim",
         lazy = false,
@@ -103,6 +171,8 @@ return {
                 "black",
                 "shfmt",
                 "stylua",
+                "goimports",
+                "gofumpt",
             },
         },
     },
